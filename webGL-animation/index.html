@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Animation WebGL</title>
+</head>
+<body>
+    <canvas id="glcanvas" width="600" height="460">I regret to inform you that your browser and/or machine doesn't support the canvas element</canvas>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+    
+        attribute vec2 aVertexPosition;
+        
+        uniform vec2 uScalingFactor;
+        uniform vec2 uRotationVector;
+        
+        void main() {
+            vec2 rotatedPosition = vec2(
+                aVertexPosition.x * uRotationVector.y +
+                aVertexPosition.y * uRotationVector.x,
+                aVertexPosition.y * uRotationVector.y -
+                aVertexPosition.x * uRotationVector.x
+            );
+        
+            gl_Position = vec4(rotatedPosition * uScalingFactor, 0.0, 1.0);
+        }
+    
+    </script>
+    
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        
+        #ifdef GL_ES
+            precision highp float;
+        #endif
+        
+        uniform vec4 uGlobalColor;
+        
+        void main() {
+            
+            gl_FragColor = uGlobalColor;
+            
+        }
+        
+    </script>
+    
+    <script type="text/javascript" src="js/globals.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+</body>
+</html>

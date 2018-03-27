@@ -1,0 +1,50 @@
+body {
+    
+    background-color: #000000;
+    
+}
+
+header, section, nav, body {
+    
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+nav {
+    
+    padding: 25px 0;
+    
+    margin: -10px 0;
+    
+}
+
+h1 {
+    
+    color: #FFFFFF;
+    
+}
+
+#canvas {
+    
+    background-color: #FFFFFF;
+    
+    min-width: 500px;
+    
+}
+
+#main {
+    
+    width: 70%;
+    
+}
+
+@media screen and (orientation: landscape) {
+    
+    #main {
+        
+        width: 40%;
+        
+    }
+    
+}
