@@ -88,7 +88,7 @@ function compileShader(id, type) {
     
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         
-        console.log(`Error compiling ${type === gl.VERTEX_SHADER ? "vertex" : "fragment" } shader: `)
+        console.log(`Error compiling ${type === gl.VERTEX_SHADER ? "vertex" : "fragment" } shader: `);
         console.log(gl.getShaderInfoLog(shader));
         
     }
@@ -114,7 +114,7 @@ function animateScene() {
     uRotationVector = gl.getUniformLocation(shaderProgram, "uRotationVector");
     
     gl.uniform2fv(uScalingFactor, currentScale);
-    gl.uniform2fv(uRotationVector, currentRotation)
+    gl.uniform2fv(uRotationVector, currentRotation);
     gl.uniform4fv(uGlobalColor, [0.1, 0.7, 0.2, 1.0]);
     
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
