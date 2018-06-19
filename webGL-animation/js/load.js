@@ -115,7 +115,7 @@ function animateScene() {
     
     gl.uniform2fv(uScalingFactor, currentScale);
     gl.uniform2fv(uRotationVector, currentRotation);
-    gl.uniform4fv(uGlobalColor, [0.1, 0.7, 0.2, 1.0]);
+    gl.uniform4fv(uGlobalColor, [1.0, 0.7, 0.2, 1.0]);
     
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     
@@ -126,15 +126,15 @@ function animateScene() {
     
     gl.drawArrays(gl.TRIANGLES, 0, vertexCount);
     
-    window.requestAnimationFrame(function(currentTime) {
-        
-        let deltaAngle = ((currentTime - previousTime) / 1000.0) * degreesPerSecond;
-        
+    window.requestAnimationFrame(function (currentTime) {
+
+        let deltaAngle = (currentTime - previousTime) / 1000.0 * degreesPerSecond;
+
         currentAngle = (currentAngle + deltaAngle) % 360;
-        
+
         previousTime = currentTime;
         animateScene();
-        
-    })
+
+    });
     
 }
