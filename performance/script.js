@@ -1,3 +1,5 @@
+/*global performance*/
+
 var meep = [ "hi", "hello", "meme", "shrek", "ogre", "aaa", "hi", "hello", "meme", "shrek", "ogre", "aaa", "hi", "hello", "meme", "shrek", "ogre", "aaa", "hi", "hello", "meme", "shrek", "ogre", "aaa", "hi", "hello", "meme", "shrek", "ogre", "aaa" ];
 var perfTmp1;
 var perfTmp2;
@@ -49,5 +51,3 @@ function avg(fn, it) {
     return (totalValue / it);
     
 }
-
-/*global performance*/

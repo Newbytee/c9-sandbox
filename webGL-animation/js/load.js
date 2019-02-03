@@ -99,9 +99,13 @@ function compileShader(id, type) {
 
 function animateScene() {
     
-    gl.viewport(0, 0, glCanvas.width, glCanvas.height);
+    let yOffset = time % (glCanvas.height * 2);
+    
+    gl.viewport(0, yOffset - glCanvas.height, glCanvas.width, glCanvas.height);
     gl.clearColor(0.8, 0.9, 1.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+    
+    time++;
     
     let radians = currentAngle * Math.PI / 180;
     currentRotation[0] = Math.sin(radians);

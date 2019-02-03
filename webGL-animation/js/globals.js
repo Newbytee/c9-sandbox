@@ -16,4 +16,5 @@ let uRotationVector;
 let aVertexPosition;
 
 let previousTime = 0.0;
-let degreesPerSecond = 90.0;
+let degreesPerSecond = -45.0;
+let time = 0;
