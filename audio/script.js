@@ -38,6 +38,7 @@ START_BTN.addEventListener("click", function() {
         oscillators[i].start();
     }
 });
+
 STOP_BTN.addEventListener("click", function() {
     for (let i = 0; i < oscillators.length; i++) {
         oscillators[i].stop();
